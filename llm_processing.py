@@ -1,6 +1,7 @@
 import os
 import asyncio
 import json
+import speech_synthesis
 from pathlib import Path
 from groq import AsyncGroq
 from dotenv import load_dotenv
@@ -74,7 +75,7 @@ async def llm_response(input) -> None:
                 response += content
                 print(content, end="")
             if chunk.choices[0].finish_reason:
-                if chunk.x_groq is None and chunk.x_groq.usage is None:
+                if chunk.x_groq is not None and chunk.x_groq.usage is not None:
                     print(f"\n Ussage stats: {chunk.x_groq.usage}")
 
         # Append the response to chat history
@@ -84,6 +85,9 @@ async def llm_response(input) -> None:
         })
         await save_history(chat_history)
         print("\n")
+
+        # Generate Voice Synthesis
+        speech_synthesis.speech(response)
 
     # cancel on keyboard interrupt
     except KeyboardInterrupt:

@@ -5,8 +5,13 @@
 # Local Folder
 _pycache_/
 vscode/
-tempCodeRunnerFile.py
+tempCodeRunnerFile
 
 # Personal History
 chat_history.json
 
+# Voice Output
+output.wav
+
+# Private Voice Model
+models/
