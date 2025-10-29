@@ -11,4 +11,6 @@ Better Voice Model,
 
 
 URGENT:
-Fixing highly cost token request caused by chat history
+Fixing highly cost token request caused by chat history, 
+
+Implementing Database for storing chat history
