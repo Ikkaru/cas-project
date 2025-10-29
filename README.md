@@ -9,6 +9,6 @@ Voice recognition,
 Model Context Protocol, 
 Better Voice Model, 
 
-<\break>
+
 URGENT:
 Fixing highly cost token request caused by chat history
